@@ -12,7 +12,7 @@
     <url>http://maven.apache.org</url>
 	<modules>
 		<module>../Base</module>
-		<module>../HTTPBase</module>
+		<module>../Identity</module>
     </modules>
 	
     <dependencyManagement>
