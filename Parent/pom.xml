@@ -12,6 +12,7 @@
     <url>http://maven.apache.org</url>
 	<modules>
 		<module>../Base</module>
+		<module>../Database</module>
 		<module>../Identity</module>
     </modules>
 	
@@ -62,6 +63,26 @@
 				<artifactId>spring-orm</artifactId>
 				<version>4.2.2.RELEASE</version>
 			</dependency>
+
+			<!--Mysql -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.34</version>
+			</dependency>
+
+			<!-- hibernate4 -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.1.7.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>dialect</artifactId>
+				<version>4.1.7.Final</version>
+			</dependency>
 	
 			<!--Servlet -->
 			<dependency>
@@ -84,5 +105,11 @@
 			
 		</dependencies>
 	</dependencyManagement>
+
+	<properties>
+		<BaseVersion>1.0.0-SNAPSHOT</BaseVersion>
+		<DatabaseVersion>${BaseVersion}</DatabaseVersion>
+		<IdentityVersion>${BaseVersion}</IdentityVersion>
+	</properties>
 
 </project>

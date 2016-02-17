@@ -1,5 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>Parent</artifactId>
         <groupId>SpringAndHibernate</groupId>
@@ -7,22 +9,16 @@
         <relativePath>../Parent/</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>Identity</artifactId>
-    <packaging>war</packaging>
-    <name>Identity</name>
+    <artifactId>Database</artifactId>
+    <version>${DatabaseVersion}</version>
+    <packaging>jar</packaging>
+    <name>Database</name>
     <dependencies>
-
         <dependency>
             <groupId>SpringAndHibernate</groupId>
             <artifactId>Base</artifactId>
             <version>${BaseVersion}</version>
         </dependency>
-        <dependency>
-            <groupId>SpringAndHibernate</groupId>
-            <artifactId>Database</artifactId>
-            <version>${DatabaseVersion}</version>
-        </dependency>
-
         <!-- testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -32,6 +28,8 @@
     </dependencies>
 
     <build>
-        <finalName>Identity</finalName>
+        <finalName>Database</finalName>
     </build>
+
+
 </project>
