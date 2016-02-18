@@ -78,11 +78,11 @@
 				<version>4.1.7.Final</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>dialect</artifactId>
-				<version>4.1.7.Final</version>
-			</dependency>
+			<!--<dependency>-->
+				<!--<groupId>org.hibernate</groupId>-->
+				<!--<artifactId>dialect</artifactId>-->
+				<!--<version>4.1.7.Final</version>-->
+			<!--</dependency>-->
 	
 			<!--Servlet -->
 			<dependency>
