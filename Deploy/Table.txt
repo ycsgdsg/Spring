@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS `user_account` (
+  `USER_ID` bigint(20) NOT NULL,
+  `EMAIL` varchar(256) COLLATE utf8_bin NOT NULL,
+  `DOB` datetime DEFAULT NULL,
+  `PASSWORD` varchar(2) COLLATE utf8_bin NOT NULL,
+  `DATE_CREATED` datetime NOT NULL,
+  `DATE_MODIFIED` datetime DEFAULT NULL,
+  `STATUS` smallint(6) NOT NULL,
+  `STATUS_REASON_CODE` smallint(6) DEFAULT NULL,
+  `EMAIL_STATUS` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`USER_ID`),
+  KEY `USER_ACCOUNT_EMAIL_IDX` (`EMAIL`(255))
+) ;

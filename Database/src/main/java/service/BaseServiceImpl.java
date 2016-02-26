@@ -12,11 +12,10 @@ import java.util.List;
 @Transactional
 public class BaseServiceImpl<T> implements BaseService<T> {
 
-    /**
-     * 注入BaseDao
-     */
-    @Resource
     private BaseDao<T> dao;
+    public void setDao(BaseDao<T> dao) {
+        this.dao = dao;
+    }
 
 
     public void save(T entity) {

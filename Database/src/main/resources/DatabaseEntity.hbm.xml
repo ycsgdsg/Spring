@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="type.UserAccountEntity" table="user_account" schema="" catalog="identity">
+        <id name="userId" column="USER_ID"/>
+        <property name="email" column="EMAIL"/>
+        <property name="dob" column="DOB"/>
+        <property name="password" column="PASSWORD"/>
+        <property name="dateCreated" column="DATE_CREATED"/>
+        <property name="dateModified" column="DATE_MODIFIED"/>
+        <property name="status" column="STATUS"/>
+        <property name="statusReasonCode" column="STATUS_REASON_CODE"/>
+        <property name="emailStatus" column="EMAIL_STATUS"/>
+    </class>
+</hibernate-mapping>

@@ -31,11 +31,15 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     @Resource
     private SessionFactory sessionFactory;
 
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     /**
      * 获取当前工作的Session
      */
     protected Session getSession() {
-        return this.sessionFactory.getCurrentSession();
+        return this.sessionFactory.openSession();
     }
 
     public void save(T entity) {
