@@ -25,6 +25,7 @@ public class TestUserDao {
         UserAccountEntity type = new UserAccountEntity();
         type.setUserId(1000L);
         type.setEmail("chaoyuan1@ea.com");
+        type.setPassword("123");
         type.setDateCreated(new Timestamp(new Date().getTime()));
         type.setStatus(Short.valueOf("1"));
         type.setStatusReasonCode(Short.valueOf("1"));
