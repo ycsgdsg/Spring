@@ -36,14 +36,17 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
         this.getHibernateTemplate().save(entity);
     }
 
+    @Transactional(readOnly = false)
     public void update(T entity) {
         this.getHibernateTemplate().update(entity);
     }
 
+    @Transactional(readOnly = false)
     public void delete(Long id) {
         this.getHibernateTemplate().delete(this.findById(id));
     }
 
+    @Transactional(readOnly = true)
     public T findById(Long id) {
         return (T) this.getHibernateTemplate().get(this.clazz, id);
     }
