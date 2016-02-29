@@ -1,3 +1,4 @@
+/Database/src/main/resources/mysql.properties
 target
 .idea
 *.iml

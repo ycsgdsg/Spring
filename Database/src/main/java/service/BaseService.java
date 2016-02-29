@@ -17,5 +17,4 @@ public interface BaseService<T> {
 
     public T getById(Long id);
 
-    public List<T> getByHQL(String hql, Object... params);
 }

@@ -16,6 +16,4 @@ public interface BaseDao<T> {
 
     public T findById(Long id);
 
-    public List<T> findByHQL(String hql, Object... params);
-
 }

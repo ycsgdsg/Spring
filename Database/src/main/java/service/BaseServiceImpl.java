@@ -9,14 +9,12 @@ import java.util.List;
 /**
  * Created by yc on 2016/1/30.
  */
-@Transactional
 public class BaseServiceImpl<T> implements BaseService<T> {
 
     private BaseDao<T> dao;
     public void setDao(BaseDao<T> dao) {
         this.dao = dao;
     }
-
 
     public void save(T entity) {
         dao.save(entity);
@@ -34,7 +32,4 @@ public class BaseServiceImpl<T> implements BaseService<T> {
         return dao.findById(id);
     }
 
-    public List<T> getByHQL(String hql, Object... params) {
-        return dao.findByHQL(hql, params);
-    }
 }

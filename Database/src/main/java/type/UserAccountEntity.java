@@ -15,7 +15,7 @@ public class UserAccountEntity {
     private String password;
     private Timestamp dateCreated;
     private Timestamp dateModified;
-    private short status;
+    private Short status;
     private Short statusReasonCode;
     private Short emailStatus;
 
@@ -81,11 +81,11 @@ public class UserAccountEntity {
 
     @Basic
     @Column(name = "STATUS")
-    public short getStatus() {
+    public Short getStatus() {
         return status;
     }
 
-    public void setStatus(short status) {
+    public void setStatus(Short status) {
         this.status = status;
     }
 

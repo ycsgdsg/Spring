@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.0.xsd
-        http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-        http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-        ">
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- Hibernate4 -->
     <!-- 加载资源文件  其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载-->
@@ -28,8 +21,6 @@
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://10.88.48.81:3306/identity</prop>
-                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <!--  <prop key="hibernate.current_session_context_class">thread</prop> -->
             </props>
         </property>
@@ -49,10 +40,10 @@
     <!--  class="org.apache.tomcat.dbcp.dbcp.BasicDataSource" -->
     <!--  class="org.springframework.jdbc.datasource.DriverManagerDataSource" -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://10.88.48.81:3306" />
-        <property name="username" value="root" />
-        <property name="password" value="#Bugsfor$" />
+        <property name="driverClassName" value="${hibernate.driverClassName}" />
+        <property name="url" value="${hibernate.url}" />
+        <property name="username" value="${hibernate.username}" />
+        <property name="password" value="${hibernate.password}" />
     </bean>
 
     <!-- 配置Hibernate事务管理器 -->
@@ -61,27 +52,27 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <!-- 事务代理类 -->
-    <bean id="transactionBese"
-          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
-          lazy-init="true" abstract="true">
-        <property name="transactionManager" ref="transactionManager"></property>
-        <property name="transactionAttributes">
-            <props>
-                <prop key="add*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="save*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="update*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="insert*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="modify*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="delete*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="del*">PROPAGATION_REQUIRED,-Exception</prop>
-                <prop key="get*">PROPAGATION_NEVER</prop>
-                <prop key="find*">PROPAGATION_NEVER</prop>
-            </props>
-        </property>
-    </bean>
+     <!--事务代理类-->
+    <!--<bean id="transactionBase"-->
+          <!--class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"-->
+          <!--lazy-init="true" abstract="true">-->
+        <!--<property name="transactionManager" ref="transactionManager"></property>-->
+        <!--<property name="transactionAttributes">-->
+            <!--<props>-->
+                <!--<prop key="add*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="save*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="update*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="insert*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="modify*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="delete*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="del*">PROPAGATION_REQUIRED,-Exception</prop>-->
+                <!--<prop key="get*">PROPAGATION_NEVER</prop>-->
+                <!--<prop key="find*">PROPAGATION_NEVER</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
 
-    <!--&lt;!&ndash; 配置事务异常封装 &ndash;&gt;-->
+    <!-- 配置事务异常封装 -->
     <!--<bean id="persistenceExceptionTranslationPostProcessor"-->
           <!--class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />-->
 
@@ -89,6 +80,7 @@
     <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
         <!--<tx:attributes>-->
             <!--<tx:method name="add*" propagation="REQUIRED" />-->
+            <!--<tx:method name="save*" propagation="REQUIRED" />-->
             <!--<tx:method name="get*" propagation="REQUIRED" />-->
             <!--<tx:method name="*" read-only="true" />-->
         <!--</tx:attributes>-->
@@ -96,7 +88,7 @@
 
     <!--<aop:config expose-proxy="true">-->
         <!--&lt;!&ndash; 只对业务逻辑层实施事务 &ndash;&gt;-->
-        <!--<aop:pointcut id="txPointcut" expression="execution(* com.lei.demo.service..*.*(..))" />-->
+        <!--<aop:pointcut id="txPointcut" expression="execution(* service.*(..))" />-->
         <!--&lt;!&ndash; Advisor定义，切入点和通知分别为txPointcut、txAdvice &ndash;&gt;-->
         <!--<aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/>-->
     <!--</aop:config>-->
