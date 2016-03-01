@@ -1,10 +1,6 @@
 package service;
 
 import dao.BaseDao;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created by yc on 2016/1/30.

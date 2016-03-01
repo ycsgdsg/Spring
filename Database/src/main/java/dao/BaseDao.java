@@ -1,11 +1,9 @@
 package dao;
 
-import java.util.List;
 
 /**
  * Created by yc on 2016/1/30.
  */
-
 public interface BaseDao<T> {
 
     public void save(T entity);
