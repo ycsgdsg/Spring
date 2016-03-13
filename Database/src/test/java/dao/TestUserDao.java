@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class TestUserDao {
 
-    ApplicationContext context = new ClassPathXmlApplicationContext("hibernate-cfg.xml", "context.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("hibernate/hibernate-cfg.xml", "spring/context.xml");
     TestHelper helper = (TestHelper)context.getBean("testHelper");
 
     @Test

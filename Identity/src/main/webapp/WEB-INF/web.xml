@@ -8,7 +8,7 @@
     <!-- Spring配置文件位置 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/spring.xml</param-value>
+        <param-value>classpath:spring/context.xml</param-value>
     </context-param>
 
     <!-- filter过滤器 -->
@@ -33,7 +33,7 @@
     <!--servlet配置-->
     <servlet>
         <servlet-name>identityServlet</servlet-name>
-        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+        <servlet-class>servlet.IdentityServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:/spring/identity-servlet.xml</param-value>
