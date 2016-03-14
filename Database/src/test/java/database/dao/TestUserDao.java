@@ -1,10 +1,10 @@
-package dao;
+package database.dao;
 
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.Test;
-import type.UserAccountEntity;
+import database.type.UserAccountEntity;
 
 import java.sql.Timestamp;
 import java.util.Date;

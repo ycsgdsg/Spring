@@ -3,6 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <osgi:service id="userAccountService" ref="userAccountService" />
+       <!--<osgi:reference id="userAccountService" interface="database.service.identity.userAccount.UserAccountService" />-->
 
 </beans>

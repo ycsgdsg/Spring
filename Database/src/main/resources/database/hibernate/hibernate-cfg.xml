@@ -10,7 +10,7 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <!-- Hibernate4 -->
     <!-- 加载资源文件  其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载-->
-    <context:property-placeholder location="classpath:hibernate/mysql.properties" />
+    <context:property-placeholder location="classpath:database/hibernate/mysql.properties" />
 
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -26,12 +26,12 @@
         </property>
         <property name="annotatedClasses">
             <list>
-                <value>type.UserAccountEntity</value>
+                <value>database.type.UserAccountEntity</value>
             </list>
         </property>
         <property name="mappingLocations">
             <list>
-                <value>classpath:hibernate/DatabaseEntity.hbm.xml</value>
+                <value>classpath:database/hibernate/DatabaseEntity.hbm.xml</value>
             </list>
         </property>
     </bean>

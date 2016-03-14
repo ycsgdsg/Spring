@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="type.UserAccountEntity" table="user_account" schema="" catalog="identity">
+    <class name="database.type.UserAccountEntity" table="user_account" schema="" catalog="identity">
         <id name="userId" column="USER_ID"/>
         <property name="email" column="EMAIL"/>
         <property name="dob" column="DOB"/>

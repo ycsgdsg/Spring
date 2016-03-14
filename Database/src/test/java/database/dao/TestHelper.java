@@ -1,10 +1,8 @@
-package dao;
+package database.dao;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Repository;
-import service.BaseService;
-import type.UserAccountEntity;
+import database.service.BaseService;
+import database.type.UserAccountEntity;
 
 import javax.annotation.Resource;
 

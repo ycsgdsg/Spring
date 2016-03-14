@@ -1,4 +1,4 @@
-package dao;
+package database.dao;
 
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;

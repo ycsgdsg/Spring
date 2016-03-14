@@ -1,4 +1,4 @@
-package type;
+package database.type;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

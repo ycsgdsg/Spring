@@ -1,7 +1,7 @@
 package handler;
 
 import org.springframework.web.HttpRequestHandler;
-import service.identity.userAccount.UserAccountService;
+import database.service.identity.userAccount.UserAccountService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

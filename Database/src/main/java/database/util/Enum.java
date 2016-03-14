@@ -1,4 +1,4 @@
-package util;
+package database.util;
 
 /**
  * Created by chaoyuan on 02/23/2016.

@@ -1,8 +1,8 @@
-package service.identity.userAccount;
+package database.service.identity.userAccount;
 
-import dao.BaseDao;
-import service.BaseServiceImpl;
-import type.UserAccountEntity;
+import database.dao.BaseDao;
+import database.service.BaseServiceImpl;
+import database.type.UserAccountEntity;
 
 import javax.annotation.Resource;
 

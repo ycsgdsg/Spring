@@ -1,6 +1,6 @@
-package service;
+package database.service;
 
-import dao.BaseDao;
+import database.dao.BaseDao;
 
 /**
  * Created by yc on 2016/1/30.

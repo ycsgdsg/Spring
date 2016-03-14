@@ -33,6 +33,53 @@
 
     <build>
         <finalName>Database</finalName>
+
+        <plugins>
+        <!-- Felix bundle plugin -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Spring-Context>*;publish-context:=false</Spring-Context>
+                        <Import-Package>
+                            org.hibernate*,
+                            org.springframework*,
+
+                            *;resolution:=optional
+                        </Import-Package>
+                        <DynamicImport-Package>
+                            oracle.*,
+                            net.sf.*,
+                            org.springframework.*,
+                            org.hibernate,
+                            org.hibernate.*,
+                            org.aopalliance.*,
+                            com.sun.xml.*,
+                            com.ea.nucleus.sharding.*,
+                            com.sun.crypto.provider.SunJCE
+                        </DynamicImport-Package>
+                        <Private-Package>
+                            com.ea.nucleus.${project.artifactId}*,
+                            com.paymentech.sdk.*
+                        </Private-Package>
+                        <Export-Package>
+                            !com.ea.nucleus.${project.artifactId}.http*,
+                            !com.ea.nucleus.${project.artifactId}.impl*,
+                            com.ea.nucleus.${project.artifactId}*,
+                            !*
+                        </Export-Package>
+                        <Embed-Dependency>
+                            jaxb2-basics-runtime,
+                            bcprov-jdk15on;groupId=org.bouncycastle;inline=false,
+                            bcpg-jdk15on;groupId=org.bouncycastle;inline=false
+                        </Embed-Dependency>
+                        <Nucleus-doc-symname>nucleus.${project.artifactId}</Nucleus-doc-symname>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 
