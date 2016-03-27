@@ -3,12 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
-       <bean id="accessHandler" class="handler.AccessHandler">
+       <bean id="accessHandler" class="identity.handler.AccessHandler">
               <property name="userAccountService" ref="userAccountService" />
        </bean>
 
-       <bean id="registerHandler" class="handler.RegisterHandler">
+       <bean id="registerHandler" class="identity.handler.RegisterHandler">
               <property name="userAccountService" ref="userAccountService" />
        </bean>
+
+       <bean id="defaultHandler" class="identity.handler.DefaultHandler" />
 
 </beans>

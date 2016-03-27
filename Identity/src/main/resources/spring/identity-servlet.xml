@@ -8,6 +8,7 @@
             <map>
                 <entry key="/user/access" value-ref="accessHandler" />
                 <entry key="/user/register" value-ref="registerHandler" />
+                <entry key="/*" value-ref="defaultHandler" />
             </map>
         </property>
     </bean>

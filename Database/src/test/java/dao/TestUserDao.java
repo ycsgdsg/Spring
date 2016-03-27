@@ -1,4 +1,4 @@
-package database.dao;
+package dao;
 
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;
@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class TestUserDao {
 
-    ApplicationContext context = new ClassPathXmlApplicationContext("hibernate/hibernate-cfg.xml", "spring/context.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring/hibernate/hibernate-context.xml", "spring/spring-context.xml");
     TestHelper helper = (TestHelper)context.getBean("testHelper");
 
     @Test

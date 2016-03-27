@@ -1,4 +1,4 @@
-package handler;
+package identity.handler;
 
 import org.springframework.web.HttpRequestHandler;
 import database.service.identity.userAccount.UserAccountService;
@@ -11,9 +11,7 @@ import java.io.IOException;
 /**
  * Created by chaoyuan on 03/11/2016.
  */
-public class AccessHandler implements HttpRequestHandler {
-
-    private UserAccountService userAccountService;
+public class RegisterHandler implements HttpRequestHandler {private UserAccountService userAccountService;
 
     public void setUserAccountService(UserAccountService userAccountService) {
         this.userAccountService = userAccountService;

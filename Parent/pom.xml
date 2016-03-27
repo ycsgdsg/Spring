@@ -1,17 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <artifactId>SpringAndHibernate</artifactId>
-        <groupId>SpringAndHibernate</groupId>
+        <artifactId>Spring</artifactId>
+        <groupId>Spring</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>Parent</artifactId>
     <packaging>pom</packaging>
-    <name>Parent</name>
-    <url>http://maven.apache.org</url>
+    <version>1.0-SNAPSHOT</version>
 	<modules>
-		<module>../Base</module>
+		<module>../SpringBase</module>
 		<module>../Database</module>
 		<module>../Identity</module>
     </modules>
@@ -23,7 +23,7 @@
 			<dependency>
 				<groupId>org.testng</groupId>
 				<artifactId>testng</artifactId>
-				<version>${TestNGVersion}</version>
+				<version>${testNG.version}</version>
 				<scope>test</scope>
 			</dependency>
 
@@ -31,43 +31,43 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-beans</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-expression</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 				<scope>test</scope>
 			</dependency>
 
@@ -76,62 +76,42 @@
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
-				<version>${MysqlVersion}</version>
+				<version>${mysql.version}</version>
 			</dependency>
 
 			<!-- hibernate4 -->
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-core</artifactId>
-				<version>${HibernateVersion}</version>
+				<version>${hibernate.version}</version>
 			</dependency>
-
-
-			<!-- OSGI -->
-			<!--<dependency>-->
-				<!--<groupId>org.osgi</groupId>-->
-				<!--<artifactId>org.osgi.core</artifactId>-->
-				<!--<version>6.0.0</version>-->
-			<!--</dependency>-->
-
-			<!--<dependency>-->
-				<!--<groupId>org.hibernate</groupId>-->
-				<!--<artifactId>dialect</artifactId>-->
-				<!--<version>4.1.7.Final</version>-->
-			<!--</dependency>-->
 
 			<!--Servlet -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
-				<version>${ServletVersion}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${servlet.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
-				<version>${SpringVersion}</version>
+				<version>${spring.version}</version>
 			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
 
-	<properties>
-		<BaseVersion>1.0.0-SNAPSHOT</BaseVersion>
-		<DatabaseVersion>${BaseVersion}</DatabaseVersion>
-		<IdentityVersion>${BaseVersion}</IdentityVersion>
+    <properties>
+        <base.version>1.0-SNAPSHOT</base.version>
+        <database.version>${base.version}</database.version>
+        <identity.version>${base.version}</identity.version>
 
-		<SpringVersion>4.2.2.RELEASE</SpringVersion>
-		<HibernateVersion>4.1.7.Final</HibernateVersion>
-		<MysqlVersion>5.1.34</MysqlVersion>
-		<ServletVersion>3.0-alpha-1</ServletVersion>
-		<TestNGVersion>6.1.1</TestNGVersion>
-	</properties>
+        <spring.version>4.2.2.RELEASE</spring.version>
+        <hibernate.version>4.1.7.Final</hibernate.version>
+        <mysql.version>5.1.34</mysql.version>
+        <servlet.version>3.0-alpha-1</servlet.version>
+        <testNG.version>6.1.1</testNG.version>
+    </properties>
 
 </project>

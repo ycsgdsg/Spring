@@ -4,20 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>Parent</artifactId>
-        <groupId>SpringAndHibernate</groupId>
+        <groupId>Spring</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../Parent/</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>Database</artifactId>
-    <version>${DatabaseVersion}</version>
+    <version>${database.version}</version>
     <packaging>jar</packaging>
     <name>Database</name>
     <dependencies>
         <dependency>
-            <groupId>SpringAndHibernate</groupId>
-            <artifactId>Base</artifactId>
-            <version>${BaseVersion}</version>
+            <groupId>Spring</groupId>
+            <artifactId>SpringBase</artifactId>
+            <version>${base.version}</version>
         </dependency>
         <!-- testng -->
         <dependency>
@@ -33,53 +33,6 @@
 
     <build>
         <finalName>Database</finalName>
-
-        <plugins>
-        <!-- Felix bundle plugin -->
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Spring-Context>*;publish-context:=false</Spring-Context>
-                        <Import-Package>
-                            org.hibernate*,
-                            org.springframework*,
-
-                            *;resolution:=optional
-                        </Import-Package>
-                        <DynamicImport-Package>
-                            oracle.*,
-                            net.sf.*,
-                            org.springframework.*,
-                            org.hibernate,
-                            org.hibernate.*,
-                            org.aopalliance.*,
-                            com.sun.xml.*,
-                            com.ea.nucleus.sharding.*,
-                            com.sun.crypto.provider.SunJCE
-                        </DynamicImport-Package>
-                        <Private-Package>
-                            com.ea.nucleus.${project.artifactId}*,
-                            com.paymentech.sdk.*
-                        </Private-Package>
-                        <Export-Package>
-                            !com.ea.nucleus.${project.artifactId}.http*,
-                            !com.ea.nucleus.${project.artifactId}.impl*,
-                            com.ea.nucleus.${project.artifactId}*,
-                            !*
-                        </Export-Package>
-                        <Embed-Dependency>
-                            jaxb2-basics-runtime,
-                            bcprov-jdk15on;groupId=org.bouncycastle;inline=false,
-                            bcpg-jdk15on;groupId=org.bouncycastle;inline=false
-                        </Embed-Dependency>
-                        <Nucleus-doc-symname>nucleus.${project.artifactId}</Nucleus-doc-symname>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
 

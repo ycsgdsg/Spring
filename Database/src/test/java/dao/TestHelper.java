@@ -1,4 +1,4 @@
-package database.dao;
+package dao;
 
 import org.springframework.stereotype.Repository;
 import database.service.BaseService;

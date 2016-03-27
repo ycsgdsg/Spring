@@ -1,4 +1,4 @@
-package servlet;
+package identity.servlet;
 
 import org.springframework.web.servlet.DispatcherServlet;
 
