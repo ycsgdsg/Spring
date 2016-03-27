@@ -12,7 +12,7 @@
     <artifactId>Database</artifactId>
     <version>${database.version}</version>
     <packaging>jar</packaging>
-    <name>Database</name>
+
     <dependencies>
         <dependency>
             <groupId>Spring</groupId>
