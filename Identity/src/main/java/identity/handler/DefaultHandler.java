@@ -1,18 +1,19 @@
 package identity.handler;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.HttpRequestHandler;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by yc on 2016/3/27.
  */
-public class DefaultHandler implements HttpRequestHandler {
-    @Override
-    public void handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+@Controller
+public class DefaultHandler {
 
+    @RequestMapping("/*")
+    @ResponseBody
+    public String fallbackMethod(){
+        return "Default Handler";
     }
 }

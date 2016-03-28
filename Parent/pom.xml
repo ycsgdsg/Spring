@@ -14,7 +14,7 @@
 		<module>../SpringBase</module>
 		<module>../Database</module>
 		<module>../Identity</module>
-    </modules>
+	</modules>
 	
     <dependencyManagement>
 		<dependencies>

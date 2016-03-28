@@ -1,6 +1,5 @@
 package identity.handler;
 
-
 import org.springframework.stereotype.Controller;
 import database.service.identity.userAccount.UserAccountService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,13 +11,14 @@ import javax.annotation.Resource;
  * Created by chaoyuan on 03/11/2016.
  */
 @Controller
-public class RegisterHandler {
+public class LoginHandler {
 
     @Resource(name = "userAccountService")
     private UserAccountService userAccountService;
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public void createUser() {
         System.out.println("123");
     }
+
 }

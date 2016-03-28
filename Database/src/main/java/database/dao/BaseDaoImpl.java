@@ -1,8 +1,10 @@
 package database.dao;
 
+import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.lang.reflect.ParameterizedType;
 
 /**
@@ -17,14 +19,8 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
         clazz = (Class<T>) type.getActualTypeArguments()[0];
     }
 
-//    private Session session;
-//    protected Session getSession() {
-//        if (session == null) {
-//            session = sessionFactory.openSession();
-//        }
-//        return session;
-//        return sessionFactory.openSession();
-//    }
+    @Resource(name = "sessionFactory")
+    private SessionFactory sessionFactory;
 
     @Transactional(readOnly = false)
     public void save(T entity) {

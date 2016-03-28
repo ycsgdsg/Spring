@@ -3,6 +3,7 @@ package database.service.identity.userAccount;
 import database.dao.BaseDao;
 import database.service.BaseServiceImpl;
 import database.type.UserAccountEntity;
+import org.springframework.beans.factory.annotation.Required;
 
 import javax.annotation.Resource;
 
@@ -11,7 +12,7 @@ import javax.annotation.Resource;
  */
 public class UserAccountService extends BaseServiceImpl<UserAccountEntity> {
 
-    @Resource(name = "userAccountDao")
+    @Required
     public void setDao(BaseDao<UserAccountEntity> dao) {
         super.setDao(dao);
     }
