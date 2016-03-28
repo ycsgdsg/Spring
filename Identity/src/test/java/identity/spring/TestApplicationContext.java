@@ -1,4 +1,4 @@
-package spring;
+package identity.spring;
 
 import org.testng.annotations.Test;
 

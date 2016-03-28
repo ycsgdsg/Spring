@@ -1,4 +1,4 @@
-package dao;
+package database.dao;
 
 import junit.framework.Assert;
 import org.springframework.context.ApplicationContext;

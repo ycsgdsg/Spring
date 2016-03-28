@@ -1,4 +1,4 @@
-package spring;
+package identity.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,7 +20,7 @@ public class ApplicationContextHelper {
         synchronized (helper) {
             if (!helper.initialized) {
                 context = new ClassPathXmlApplicationContext(new String[]{
-                        "/spring/context.xml",
+                        "/spring/spring-context.xml",
                         "/spring/test-context.xml",
                         "/spring/identity-servlet.xml"
                 });
