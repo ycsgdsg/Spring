@@ -20,8 +20,8 @@ public class ApplicationContextHelper {
         synchronized (helper) {
             if (!helper.initialized) {
                 context = new ClassPathXmlApplicationContext(new String[]{
-                        "**/spring/identity-servlet.xml",
-                        "**/spring/*.xml"
+                        "/spring/identity-servlet.xml",
+                        "classpath*:spring/**/*.xml"
                 });
                 initialized = true;
             }
