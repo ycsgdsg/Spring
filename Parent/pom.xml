@@ -106,6 +106,7 @@
         <base.version>1.0-SNAPSHOT</base.version>
         <database.version>${base.version}</database.version>
         <identity.version>${base.version}</identity.version>
+		<spring.base.version>${base.version}</spring.base.version>
 
         <spring.version>4.2.2.RELEASE</spring.version>
         <hibernate.version>4.1.7.Final</hibernate.version>
