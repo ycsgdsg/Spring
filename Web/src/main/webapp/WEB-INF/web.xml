@@ -8,7 +8,12 @@
     <!-- Spring配置文件位置 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:spring/**/*.xml</param-value>
+        <param-value>classpath*:spring/**/*-context.xml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>WEB-INF/log4j.properties</param-value>
     </context-param>
 
     <!-- filter过滤器 -->
@@ -28,6 +33,10 @@
     <!-- Spring监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
 
     <!--servlet配置-->
